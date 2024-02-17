@@ -1,0 +1,13 @@
+<!-- details.component.html -->
+<div *ngIf="currentProduct">
+    <h2>{{ currentProduct.title }}</h2>
+    <img [src]="currentProduct.images[0]" alt="{{ currentProduct.title }}">
+    <p>Price: ${{ currentProduct.price }}</p>
+    <p>Category: {{ currentProduct.category.name }}</p>
+    <p>Description: {{ currentProduct.description }}</p>
+    <!-- Add more details as needed -->
+  </div>
+  
+<div *ngIf="!currentProduct">
+    <p>Loading...</p>
+</div>

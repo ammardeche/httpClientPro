@@ -1,0 +1,3 @@
+<app-category [category]="categories" (eventEmitter)="getValue($event)"></app-category>
+<app-products  [currentProduct]="prod" [catItem]="catValue" *ngFor="let prod of filteredProducts" ></app-products>
+<!-- calll coment to creat  -->

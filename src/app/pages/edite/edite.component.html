@@ -1,0 +1,11 @@
+<form [formGroup]="editForm" (ngSubmit)="OnSubmit()" *ngIf="!isLoading">
+    <!-- name -->
+    <input type="text" formControlName = "title" placeholder="{{currentProduct.title}}">
+    <!-- price -->
+    <input type="text" formControlName = "price" placeholder="{{currentProduct.price}}">
+    <!-- description -->
+    <input type="text" formControlName = "description" placeholder=" {{currentProduct.description}} ">
+
+    <button type="submit">save</button>
+
+</form>

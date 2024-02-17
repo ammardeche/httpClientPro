@@ -1,0 +1,13 @@
+<div class="prod">
+    <img src="{{currentProduct.images[1]}}" alt="">
+    <p>title: {{currentProduct.title}} </p>
+    <p>price: ${{currentProduct.price}} </p>
+    <p> category :  {{currentProduct.category.name}}</p>
+    <p>description: {{currentProduct.description}} </p>
+
+    <div class="btns">
+        <a [routerLink]="['edit' , currentProduct.id]">Edite</a>
+        <a  [routerLink]="['details' , currentProduct.id]" routerLinkActive="active">details</a>
+        <button>Delete</button>
+    </div>
+</div> 
