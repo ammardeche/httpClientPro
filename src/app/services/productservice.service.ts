@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IProducts } from '../model/products';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, map, throwError } from 'rxjs';
 import { error } from 'console';
 import { ICategory } from '../model/category';
 
@@ -37,5 +37,11 @@ export class ProductserviceService {
       return this.http.put<IProducts>(apiUpd , product);
   }
 
+  // delete product 
+  
+  deleteProduct( productId : number ){
+        const apiUrl = `${this.apiUrl}/${productId}`
+        return this.http.delete<IProducts>(apiUrl); 
+  }
 
 }

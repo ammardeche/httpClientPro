@@ -1,0 +1,6 @@
+
+<form [formGroup]="logForm" (ngSubmit)="onSubmit()">
+    <input type="email" formControlName ='email' placeholder="enter email">
+    <input type="password" formControlName='password' placeholder="enter password">
+    <button type="submit">submit</button>
+</form>

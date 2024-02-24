@@ -8,6 +8,6 @@
     <div class="btns">
         <a [routerLink]="['edit' , currentProduct.id]">Edite</a>
         <a  [routerLink]="['details' , currentProduct.id]" routerLinkActive="active">details</a>
-        <button>Delete</button>
+        <button (click)="delete(currentProduct.id)">Delete</button>
     </div>
 </div> 
