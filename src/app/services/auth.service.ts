@@ -11,24 +11,19 @@ export class AuthService {
 
 
   userApi = " https://api.escuelajs.co/api/v1/auth/login"
-
+  private key = 'ckey';
   private currentUser$ = new BehaviorSubject<IUser | null>(null);
-  
-  private key = 'ckey'; 
 
   constructor( private http : HttpClient , private router : Router) {}
 
 
-  login( email : string  , password : string ){
-
-    this.http.post<IUser>(this.userApi , { email , password }).subscribe((user)=>{
-     
-      const token = user.acces_token; 
-      localStorage.setItem(this.key , token);
-      this.currentUser$.next(user); 
-      this.router.navigate(['/container'])
-    })
-
+  login( email : string  , password : string ) : Observable<IUser | null>{
+    return this.http.post<IUser>(this.userApi , { email , password }).pipe(
+      tap((user)=>{
+        const token = user.acces_token; 
+        localStorage.setItem(this.key , token); 
+      })
+    );
   }
 
   isLoggedIn$() : Observable<boolean>{
